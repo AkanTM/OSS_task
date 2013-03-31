@@ -15,8 +15,7 @@ int main(void *args)
 
 	guess = (int)strtol(buffer,&end, 10);
 	      
-	if( ((random ^ guess & 0xffff) == 0x7ebd4010 ) 
-		 && ((random^guess ^ 0xffff000) == 0xebdb010) )
+	if( random ^ guess ^ 0xffff000 == 0xebdb010 )
 	{
 		printf("Success!\n");
 	}
